@@ -1,0 +1,86 @@
+\documentclass{FR16} 
+
+\begin{document}
+
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\subsection{Overview}
+Automation during data acquisition is not just a requisite but indispensable for precision systems. High performance accelerometer which is the heart of the inertial system requires a rigorous testing protocol spanning over 6 to 7 days  to obtain many system-derived performance parameters (bias,drift, scale-factor (SF),  stability etc.) specified for inertial-grade accelerometers. 
+
+%Check link below
+%https://www.spirent.com/-/media/datasheets/positioning/siminertial.pdf?la=en&hash=7933CA114644C3F8185A1D66EE2E1607894AA639
+
+
+\subsection{Advantages of automation}
+%The testing of an Inertial navigation sensor presents a major challenge in its own right. The linear and angular sensors are usually characterized separately using centrifuges and angular rate tables respectively. Some limited integrated navigation testing can be performed using rate tables equipped with a lever arm but establishing full operational performance usually requires expensive and time-consuming field test on an appropriate moving vehicle platform. To reduce the need for field trials, performance of the inertial systems can be established through automated testing equipment. Automation of the testing process blah blah blah.
+By automating this testing protocol, the  following advantages can  be obtained:
+\begin{itemize}
+    \item \textbf{Reduction in wastage:}Human errors during manual entry would result in dispensing away complete accelerometer system. Such wastage of resources could be avoided by automation. 
+    \item \textbf{Increased throughput or productivity:}By automating this testing procedure/protocol, it would become possible to engage a precious human resource elsewhere.
+    \item \textbf{Increased consistency of output:} As these high performance accelerometers are precision systems, consistency is required during the testing (angle at which they are placed etc). This requirement becomes fulfilled through automation. 
+    \item \textbf{Reduction in Human errors:} Reduction in human errors become possible by automation,which increases the overall accuracy of the testing protocol.
+    \item \textbf{Reduction in time taken for testing :} Not only it is possible to follow elaborate test sequences but also it can be done without interruption, thus reducing the overall time taken for testing. The users can benefit from the fact that the automation helps the testing to take place without any interruption or input from the user.
+    \item \textbf{Increased number of sensors:} Although it is true that the limit on the number of sensors is placed by the mechanical constraint, at least in this case the number of sensors can be increased from three to nine.
+\end{itemize}
+Thus, A well placed data acquisition clubbed with testing automation allows for elaborate test sequences without interruption leading to reduction in time and also allows for increased number of sensors that can be tested in a batch.
+
+Not only we aim to automate the protocols that lead to data acquisition, but also wish to assist them in post data acquisition. To this end, we shall be automating the myriad calculations that needs to be performed to obtain the many system derived performance parameters and many reports that needs to be generated (Conformance and Endurance test reports).
+
+The next section deals with the scope of this project. The goals that the project needs to accomplish are described in detail in the following section.
+
+
+\newpage
+\section{scope/Project goal and objectives}
+\subsection{Requisite:}
+Vary the temperature from -40$^{o}$ C to +70 $^{o}$ C then rotate the accelerometers to a specified angle with a precision of 2 arc second ($\sim$ 0.0004 degrees), then acquire acceleration and temperature data from all the connected accelerometers (generally 9) with up to six decimal accuracy. All the information needs to be logged into the computer and generate the system derived properties like (bias,drift, scale-factor (SF),  stability etc.). Furthermore, generation of  endurance and conformation report from the acquired data is also expected.  
+
+\subsection{Required protocol on acquisition front}
+In a very generic terms, the protocol starts once we gain control over the subsystems present in the automation i.e. ability to control the temperature from -40$^{o}$ C to +70 $^{o}$ C, control over the position to 2 arc second precision and acquiring data from many accelerometers very accurately. 
+
+Once, this control is established the subsystems need to be made to follow protocol. The protocol is a series of 80 to 100 steps that needs to automated. The protocol lasts for about six days and the protocol varies on day to day basis. Upon selection of the day, the protocol  needs to be run.
+
+\textcolor{red}{figures of sirs drawing} for each day.
+
+\subsection{Required protocol on analysis front}
+A program needs to be developed which can run a  program named Treatg and give many system derived parameters in an excel m
+acros and word formats. Care should be taken that the final reports are generated in the word and excel formats automatically in the specified format.
+ \begin{enumerate}
+        \item Divide the data into corresponding channels.
+        \item Place the data into folders with the name of the folder as the sensor name
+        \item Create input files for the Treatg software in a specific format
+        \item Automatically running Treatg software for each of these channels 
+        \item Analyze the obtained output from the Treatg Russian software and calculate the parameters for the conformance report
+        \item Obtain the In-run stability matrix and calculate the parameters for the conformance report
+        \item Generating graphs in png from the ouput of the Treatg software
+        \item Generating the Origin file for obtaining the desired graphs in the origin .opj format
+        \item Generate the excel files from the in-run stability matrix and making excel macros
+        \item Generating the conformance report
+        \item Generating the Endurance report
+    \end{enumerate}
+ The work plan for fulfilling the scope of this project is described in the next chapter.      
+\newpage
+\section{Work plan/Plan of action}
+\subsection{Project Output}
+The plan of action has been designed keeping the sustainability and user friendliness at the forefront. Automation is planned in such a way that the user only needs to switch on the systems and just  few clicks. Then the complete protocol of acquisition and analysis which would consume a complete day (if performed manually) gets done.
+
+\subsection{Division of work}
+our work plan is fourfold and execution of it shall proceed in four phases:
+\begin{enumerate}
+    \item  \textbf{Phase 1:} Designing, manufacturing, testing and installation of DAQ system
+    \item  \textbf{Phase 2:} Obtaining precise position of 2 arc second for Accelerometer calibration 
+    \item \textbf{Phase 3:} Interfacing with thermatron temperature controller.
+    \item \textbf{Phase 4:}software where all the six days protocol is available a click away.This software shall also include post acquisition analysis.
+\end{enumerate}
+
+Detailed execution plan of each of these phases are also submitted along with this report.
+
+
+
+
+\end{document}
